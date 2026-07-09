@@ -1,0 +1,2 @@
+"NSLocationWhenInUseUsageDescription" = "SensorLog uses your location while the app is open to show live location readings.";
+"NSMotionUsageDescription" = "SensorLog uses Motion & Fitness data to show live motion, step, and activity readings.";

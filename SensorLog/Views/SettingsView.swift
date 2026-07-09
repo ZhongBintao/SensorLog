@@ -6,6 +6,7 @@ struct SettingsView: View {
     @Environment(SensorManager.self) private var sensorManager
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
+    @AppStorage("appLanguage") private var appLanguageRawValue = AppLanguage.system.rawValue
     @Query private var snapshots: [SensorSnapshot]
 
     @State private var isConfirmingClear = false
@@ -14,8 +15,17 @@ struct SettingsView: View {
     var body: some View {
         List {
             Section("Appearance") {
-                ReadingRow("Mode", value: String(localized: "Follow System"), fallbackStatus: .available)
-                ReadingRow("Current System Appearance", value: currentSystemAppearance, fallbackStatus: .available)
+                LocalizedReadingRow("Mode", valueKey: "Follow System", fallbackStatus: .available)
+                LocalizedReadingRow("Current Appearance", valueKey: currentSystemAppearanceKey, fallbackStatus: .available)
+            }
+
+            Section("Language") {
+                Picker("Language", selection: $appLanguageRawValue) {
+                    ForEach(AppLanguage.allCases) { language in
+                        Text(LocalizedStringKey(language.titleKey))
+                            .tag(language.rawValue)
+                    }
+                }
             }
 
             Section {
@@ -40,7 +50,7 @@ struct SettingsView: View {
             } header: {
                 Text("Permissions")
             } footer: {
-                Text("iOS does not expose every Motion & Fitness permission state with the same precision as Location.")
+                Text("Motion access is updated after iOS grants or limits Motion & Fitness data.")
             }
 
             Section {
@@ -51,9 +61,9 @@ struct SettingsView: View {
                 CapabilityRow(titleKey: "Pedometer", isAvailable: sensorManager.availability.pedometer)
                 CapabilityRow(titleKey: "Activity Recognition", isAvailable: sensorManager.availability.activityRecognition)
             } header: {
-                Text("Device Capabilities")
+                Text("Sensor Support")
             } footer: {
-                Text("Simulator results do not prove real device sensor availability or accuracy.")
+                Text("Support depends on the iPhone model, iOS permissions, and system availability.")
             }
 
             Section("Data Management") {
@@ -76,8 +86,8 @@ struct SettingsView: View {
             Section("App Information") {
                 ReadingRow("App Name", value: "SensorLog", fallbackStatus: .available)
                 ReadingRow("Version", value: versionString, fallbackStatus: .available)
-                ReadingRow("Data Policy", value: String(localized: "Local device only. No upload, no server, no third-party SDK."), fallbackStatus: .available)
-                ReadingRow("Self-Test Note", value: String(localized: "Use a real iPhone for actual sensor capability and accuracy checks."), fallbackStatus: .available)
+                LocalizedReadingRow("Data Policy", valueKey: "On-device storage only. No upload, no server, no third-party SDK.", fallbackStatus: .available)
+                LocalizedReadingRow("Device Note", valueKey: "Sensor readings depend on device hardware, permissions, and current system state.", fallbackStatus: .available)
             }
         }
         .listStyle(.insetGrouped)
@@ -131,14 +141,14 @@ struct SettingsView: View {
         return "\(version) (\(build))"
     }
 
-    private var currentSystemAppearance: String {
+    private var currentSystemAppearanceKey: String {
         switch colorScheme {
         case .dark:
-            String(localized: "Dark")
+            "Dark"
         case .light:
-            String(localized: "Light")
+            "Light"
         @unknown default:
-            String(localized: "Follow System")
+            "Follow System"
         }
     }
 

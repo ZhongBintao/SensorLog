@@ -58,16 +58,16 @@ struct SnapshotDetailView: View {
 
             Section("Activity") {
                 let status = snapshot.hasActivityData ? ReadingStatus.available : .unavailable
-                ReadingRow("Activity Type", value: localizedActivityType, fallbackStatus: status)
-                ReadingRow("Confidence", value: localizedActivityConfidence, fallbackStatus: status)
+                LocalizedReadingRow("Activity Type", valueKey: activityTypeKey, fallbackStatus: status)
+                LocalizedReadingRow("Confidence", valueKey: activityConfidenceKey, fallbackStatus: status)
             }
 
             Section("Device") {
                 let status = snapshot.hasDeviceData ? ReadingStatus.available : .unavailable
                 ReadingRow("Battery Level", value: SensorFormatting.percent(snapshot.batteryLevel), fallbackStatus: status)
-                ReadingRow("Battery State", value: localizedBatteryState, fallbackStatus: status)
-                ReadingRow("Low Power Mode", value: localizedLowPowerMode, fallbackStatus: status)
-                ReadingRow("Thermal State", value: localizedThermalState, fallbackStatus: status)
+                LocalizedReadingRow("Battery State", valueKey: batteryStateKey, fallbackStatus: status)
+                LocalizedReadingRow("Low Power Mode", valueKey: lowPowerModeKey, fallbackStatus: status)
+                LocalizedReadingRow("Thermal State", valueKey: thermalStateKey, fallbackStatus: status)
             }
         }
         .listStyle(.insetGrouped)
@@ -116,33 +116,33 @@ struct SnapshotDetailView: View {
         }
     }
 
-    private var localizedActivityType: String? {
+    private var activityTypeKey: String? {
         guard let rawValue = snapshot.activityType,
               let activity = ActivityType(rawValue: rawValue) else { return nil }
-        return String(localized: String.LocalizationValue(activity.titleKey))
+        return activity.titleKey
     }
 
-    private var localizedActivityConfidence: String? {
+    private var activityConfidenceKey: String? {
         guard let rawValue = snapshot.activityConfidence,
               let confidence = ActivityConfidence(rawValue: rawValue) else { return nil }
-        return String(localized: String.LocalizationValue(confidence.titleKey))
+        return confidence.titleKey
     }
 
-    private var localizedBatteryState: String? {
+    private var batteryStateKey: String? {
         guard let rawValue = snapshot.batteryState,
               let state = BatteryChargeState(rawValue: rawValue) else { return nil }
-        return String(localized: String.LocalizationValue(state.titleKey))
+        return state.titleKey
     }
 
-    private var localizedLowPowerMode: String? {
+    private var lowPowerModeKey: String? {
         guard let isLowPowerModeEnabled = snapshot.isLowPowerModeEnabled else { return nil }
-        return String(localized: String.LocalizationValue(isLowPowerModeEnabled ? "On" : "Off"))
+        return isLowPowerModeEnabled ? "On" : "Off"
     }
 
-    private var localizedThermalState: String? {
+    private var thermalStateKey: String? {
         guard let rawValue = snapshot.thermalState,
               let state = ThermalStateDisplay(rawValue: rawValue) else { return nil }
-        return String(localized: String.LocalizationValue(state.titleKey))
+        return state.titleKey
     }
 
     private func deleteSnapshot() {

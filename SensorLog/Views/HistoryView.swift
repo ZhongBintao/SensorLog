@@ -15,7 +15,7 @@ struct HistoryView: View {
                 ContentUnavailableView(
                     "No Snapshots",
                     systemImage: "clock.badge.questionmark",
-                    description: Text("Save a snapshot from the Sensors tab to see it here.")
+                    description: Text("Tap Save Snapshot on the Sensors tab to see saved readings here.")
                 )
             } else {
                 ForEach(snapshots) { snapshot in

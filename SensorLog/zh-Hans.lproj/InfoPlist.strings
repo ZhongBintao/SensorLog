@@ -1,0 +1,2 @@
+"NSLocationWhenInUseUsageDescription" = "SensorLog 仅在 App 打开时使用你的位置来显示实时位置读数。";
+"NSMotionUsageDescription" = "SensorLog 使用运动与健身数据来显示实时运动、步数和活动读数。";

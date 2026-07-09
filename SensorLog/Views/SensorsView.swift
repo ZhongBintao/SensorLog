@@ -25,7 +25,7 @@ struct SensorsView: View {
             } header: {
                 Text("Live Status")
             } footer: {
-                Text("Permissions are requested only when you tap a permission action or start reading the related sensor.")
+                Text("SensorLog asks for permissions only when a related reading needs access.")
             }
 
             Section("Location") {
@@ -75,17 +75,17 @@ struct SensorsView: View {
             Section("Activity") {
                 let activity = sensorManager.liveState.activity
                 let status = sensorManager.liveState.activityStatus
-                ReadingRow("Activity Type", value: localizedValue(activity?.type?.titleKey), fallbackStatus: status)
-                ReadingRow("Confidence", value: localizedValue(activity?.confidence?.titleKey), fallbackStatus: status)
+                LocalizedReadingRow("Activity Type", valueKey: activity?.type?.titleKey, fallbackStatus: status)
+                LocalizedReadingRow("Confidence", valueKey: activity?.confidence?.titleKey, fallbackStatus: status)
             }
 
             Section("Device") {
                 let device = sensorManager.liveState.device
                 let status = sensorManager.liveState.deviceStatus
                 ReadingRow("Battery Level", value: SensorFormatting.percent(device.batteryLevel), fallbackStatus: status)
-                ReadingRow("Battery State", value: localizedValue(device.batteryState.titleKey), fallbackStatus: status)
-                ReadingRow("Low Power Mode", value: localizedValue(device.isLowPowerModeEnabled ? "On" : "Off"), fallbackStatus: status)
-                ReadingRow("Thermal State", value: localizedValue(device.thermalState.titleKey), fallbackStatus: status)
+                LocalizedReadingRow("Battery State", valueKey: device.batteryState.titleKey, fallbackStatus: status)
+                LocalizedReadingRow("Low Power Mode", valueKey: device.isLowPowerModeEnabled ? "On" : "Off", fallbackStatus: status)
+                LocalizedReadingRow("Thermal State", valueKey: device.thermalState.titleKey, fallbackStatus: status)
             }
         }
         .listStyle(.insetGrouped)
@@ -95,7 +95,7 @@ struct SensorsView: View {
                 Button {
                     saveSnapshot()
                 } label: {
-                    Label("Save", systemImage: "tray.and.arrow.down")
+                    Label("Save Snapshot", systemImage: "tray.and.arrow.down")
                 }
             }
         }
@@ -103,11 +103,7 @@ struct SensorsView: View {
             sensorManager.start()
         }
         .alert(item: $feedback) { feedback in
-            Alert(
-                title: Text(LocalizedStringKey(feedback.titleKey)),
-                message: Text(feedback.message),
-                dismissButton: .default(Text("OK"))
-            )
+            Alert(title: Text(LocalizedStringKey(feedback.titleKey)), message: feedback.messageText, dismissButton: .default(Text("OK")))
         }
     }
 
@@ -115,7 +111,7 @@ struct SensorsView: View {
     private var locationPermissionAction: some View {
         switch sensorManager.permissions.location {
         case .authorizedWhenInUse:
-            Label("Location Ready", systemImage: "location.fill")
+            Label("Location Enabled", systemImage: "location.fill")
                 .font(.caption.weight(.medium))
                 .foregroundStyle(.teal)
         case .denied, .restricted:
@@ -130,7 +126,7 @@ struct SensorsView: View {
             Button {
                 sensorManager.requestLocationPermission()
             } label: {
-                Label("Request Location", systemImage: "location")
+                Label("Enable Location", systemImage: "location")
             }
             .buttonStyle(.bordered)
             .controlSize(.small)
@@ -141,7 +137,7 @@ struct SensorsView: View {
     private var motionPermissionAction: some View {
         switch sensorManager.permissions.motion {
         case .available:
-            Label("Motion Ready", systemImage: "figure.walk")
+            Label("Motion Enabled", systemImage: "figure.walk")
                 .font(.caption.weight(.medium))
                 .foregroundStyle(.teal)
         case .deniedRestricted:
@@ -156,7 +152,7 @@ struct SensorsView: View {
             Button {
                 sensorManager.requestMotionPermission()
             } label: {
-                Label("Request Motion", systemImage: "figure.walk")
+                Label("Enable Motion", systemImage: "figure.walk")
             }
             .buttonStyle(.bordered)
             .controlSize(.small)
@@ -169,17 +165,17 @@ struct SensorsView: View {
 
         do {
             try modelContext.save()
-            feedback = SaveFeedback(titleKey: "Snapshot Saved", message: String(localized: "The current sensor state was saved locally."))
+            feedback = SaveFeedback(titleKey: "Snapshot Saved", messageKey: "Saved on this iPhone.")
         } catch {
             modelContext.rollback()
-            feedback = SaveFeedback(titleKey: "Save Failed", message: error.localizedDescription)
+            feedback = SaveFeedback(titleKey: "Save Failed", rawMessage: error.localizedDescription)
             return
         }
 
         do {
             try pruneOldSnapshots()
         } catch {
-            feedback = SaveFeedback(titleKey: "Snapshot Saved", message: String(localized: "The snapshot was saved, but old snapshot cleanup failed."))
+            feedback = SaveFeedback(titleKey: "Snapshot Saved", messageKey: "Saved, but old snapshot cleanup failed.")
         }
     }
 
@@ -202,16 +198,21 @@ struct SensorsView: View {
         UIApplication.shared.open(url)
     }
 
-    private func localizedValue(_ key: String?) -> String? {
-        guard let key else { return nil }
-        return String(localized: String.LocalizationValue(key))
-    }
 }
 
 private struct SaveFeedback: Identifiable {
     let id = UUID()
     var titleKey: String
-    var message: String
+    var messageKey: String?
+    var rawMessage: String?
+
+    var messageText: Text {
+        if let messageKey {
+            Text(LocalizedStringKey(messageKey))
+        } else {
+            Text(rawMessage ?? "")
+        }
+    }
 }
 
 #Preview {

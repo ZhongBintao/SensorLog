@@ -101,6 +101,34 @@ struct ReadingRow: View {
     }
 }
 
+struct LocalizedReadingRow: View {
+    let titleKey: String
+    let valueKey: String?
+    let fallbackStatus: ReadingStatus
+
+    init(_ titleKey: String, valueKey: String?, fallbackStatus: ReadingStatus) {
+        self.titleKey = titleKey
+        self.valueKey = valueKey
+        self.fallbackStatus = fallbackStatus
+    }
+
+    var body: some View {
+        HStack(alignment: .firstTextBaseline) {
+            Text(LocalizedStringKey(titleKey))
+                .foregroundStyle(.primary)
+            Spacer(minLength: 12)
+            if let valueKey {
+                Text(LocalizedStringKey(valueKey))
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.trailing)
+            } else {
+                StatusInlineText(status: fallbackStatus)
+            }
+        }
+        .accessibilityElement(children: .combine)
+    }
+}
+
 struct StatusInlineText: View {
     let status: ReadingStatus
 

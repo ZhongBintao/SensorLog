@@ -21,6 +21,7 @@
 		A1B2C3D4E5F6000000000112 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000212 /* Components.swift */; };
 		A1B2C3D4E5F6000000000113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000213 /* Assets.xcassets */; };
 		A1B2C3D4E5F6000000000114 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000214 /* Localizable.xcstrings */; };
+		A1B2C3D4E5F6000000000115 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6000000000216 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		A1B2C3D4E5F6000000000213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000214 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		A1B2C3D4E5F6000000000215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000000000217 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000000000218 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 				A1B2C3D4E5F6000000000035 /* Resources */,
 				A1B2C3D4E5F6000000000213 /* Assets.xcassets */,
 				A1B2C3D4E5F6000000000215 /* Info.plist */,
+				A1B2C3D4E5F6000000000216 /* InfoPlist.strings */,
 			);
 			path = SensorLog;
 			sourceTree = "<group>";
@@ -191,10 +195,23 @@
 			files = (
 				A1B2C3D4E5F6000000000113 /* Assets.xcassets in Resources */,
 				A1B2C3D4E5F6000000000114 /* Localizable.xcstrings in Resources */,
+				A1B2C3D4E5F6000000000115 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A1B2C3D4E5F6000000000216 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1B2C3D4E5F6000000000217 /* en */,
+				A1B2C3D4E5F6000000000218 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A1B2C3D4E5F6000000000006 /* Sources */ = {

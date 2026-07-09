@@ -21,9 +21,9 @@
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>SensorLog uses your location only while the app is open to display live sensor readings in the app.</string>
+	<string>SensorLog uses your location while the app is open to show live location readings.</string>
 	<key>NSMotionUsageDescription</key>
-	<string>SensorLog uses Motion &amp; Fitness data to display live movement, pedometer, and activity readings on this device.</string>
+	<string>SensorLog uses Motion &amp; Fitness data to show live motion, step, and activity readings.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
