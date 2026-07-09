@@ -21,6 +21,7 @@
 - Settings: appearance status, language switch, permissions, sensor support, data policy, app info.
 - Language options: Follow System, English, Simplified Chinese.
 - Appearance follows the system light/dark mode.
+- Next technical plan: `SensorLog-v1-self-test-plan.md`, section `V2 Offline Sensor Quality Plan`.
 
 ## Privacy And Permissions
 - Only request:
