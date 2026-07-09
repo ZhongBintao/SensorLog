@@ -5,6 +5,7 @@ import UIKit
 struct SettingsView: View {
     @Environment(SensorManager.self) private var sensorManager
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.colorScheme) private var colorScheme
     @Query private var snapshots: [SensorSnapshot]
 
     @State private var isConfirmingClear = false
@@ -12,6 +13,11 @@ struct SettingsView: View {
 
     var body: some View {
         List {
+            Section("Appearance") {
+                ReadingRow("Mode", value: String(localized: "Follow System"), fallbackStatus: .available)
+                ReadingRow("Current System Appearance", value: currentSystemAppearance, fallbackStatus: .available)
+            }
+
             Section {
                 PermissionRow(
                     titleKey: "Location",
@@ -123,6 +129,17 @@ struct SettingsView: View {
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
         let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1"
         return "\(version) (\(build))"
+    }
+
+    private var currentSystemAppearance: String {
+        switch colorScheme {
+        case .dark:
+            String(localized: "Dark")
+        case .light:
+            String(localized: "Light")
+        @unknown default:
+            String(localized: "Follow System")
+        }
     }
 
     private func clearAll() {

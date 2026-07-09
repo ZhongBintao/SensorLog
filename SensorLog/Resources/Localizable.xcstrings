@@ -1,124 +1,1327 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Accelerometer" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "加速度计" } } } },
-    "Activity" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "活动识别" } } } },
-    "Activity Recognition" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "活动识别" } } } },
-    "Activity Type" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "活动类型" } } } },
-    "Altitude" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "海拔" } } } },
-    "App Information" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "App 信息" } } } },
-    "App Name" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "App 名称" } } } },
-    "Authorized When In Use" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "使用 App 时允许" } } } },
-    "Automotive" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "车载" } } } },
-    "Available" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "可用" } } } },
-    "Barometer" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "气压" } } } },
-    "Barometer / Altimeter" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "气压计 / 高度计" } } } },
-    "Battery Level" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "电量" } } } },
-    "Battery State" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "充电状态" } } } },
-    "Cancel" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "取消" } } } },
-    "Charging" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在充电" } } } },
-    "Clear" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清空" } } } },
-    "Clear All Snapshots?" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清空全部快照？" } } } },
-    "Clear History" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "清空历史" } } } },
-    "Confidence" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "置信度" } } } },
-    "Course" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "航向" } } } },
-    "Critical" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "严重" } } } },
-    "Cycling" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "骑行" } } } },
-    "Data Management" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "数据管理" } } } },
-    "Data Policy" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "数据策略" } } } },
-    "Delete" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "删除" } } } },
-    "Delete Snapshot" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "删除快照" } } } },
-    "Delete Snapshot?" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "删除快照？" } } } },
-    "Denied" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已拒绝" } } } },
-    "Denied or Restricted" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已拒绝或受限" } } } },
-    "Device" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设备状态" } } } },
-    "Device Capabilities" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设备能力" } } } },
-    "Device Motion" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设备运动" } } } },
-    "Distance" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "距离" } } } },
-    "Error" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "错误" } } } },
-    "Fair" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "一般" } } } },
-    "Floors Ascended" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "上楼层数" } } } },
-    "Floors Descended" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "下楼层数" } } } },
-    "Full" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已充满" } } } },
-    "Gravity X" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "重力加速度 X" } } } },
-    "Gravity Y" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "重力加速度 Y" } } } },
-    "Gravity Z" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "重力加速度 Z" } } } },
-    "Gyroscope" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "陀螺仪" } } } },
-    "High" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "高" } } } },
-    "History" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "历史" } } } },
-    "History Error" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "历史错误" } } } },
-    "Horizontal Accuracy" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "水平精度" } } } },
-    "Identifier" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "标识符" } } } },
-    "Latitude" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "纬度" } } } },
-    "Live Status" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "实时状态" } } } },
-    "Local device only. No upload, no server, no third-party SDK." : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "仅保存在本机。不上传，不使用服务器，不接第三方 SDK。" } } } },
-    "Location" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "位置" } } } },
-    "Location Ready" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "位置已就绪" } } } },
-    "Longitude" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "经度" } } } },
-    "Low" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "低" } } } },
-    "Low Power Mode" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "低电量模式" } } } },
-    "Medium" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "中" } } } },
-    "Motion" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "运动" } } } },
-    "Motion & Fitness" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "运动与健身" } } } },
-    "Motion Ready" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "运动已就绪" } } } },
-    "No Snapshots" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "暂无快照" } } } },
-    "Nominal" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正常" } } } },
-    "Not Determined" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "尚未决定" } } } },
-    "OK" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "好" } } } },
-    "Off" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "关闭" } } } },
-    "On" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "开启" } } } },
-    "Open App Settings" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "打开 App 设置" } } } },
-    "Open Settings" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "打开设置" } } } },
-    "Pedometer" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "计步" } } } },
-    "Permission Limited" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "权限受限" } } } },
-    "Permissions" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "权限" } } } },
-    "Permissions are requested only when you tap a permission action or start reading the related sensor." : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "只有点击权限操作或开始读取相关传感器时才会请求权限。" } } } },
-    "Pitch" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Pitch" } } } },
-    "Pressure" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "气压" } } } },
-    "Relative Altitude" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "相对高度" } } } },
-    "Request Location" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "请求位置" } } } },
-    "Request Motion" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "请求运动权限" } } } },
-    "Restricted" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "受限" } } } },
-    "Roll" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Roll" } } } },
-    "Rotation Rate X" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "旋转率 X" } } } },
-    "Rotation Rate Y" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "旋转率 Y" } } } },
-    "Rotation Rate Z" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "旋转率 Z" } } } },
-    "Running" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "跑步" } } } },
-    "Save" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存" } } } },
-    "Save Failed" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存失败" } } } },
-    "Save a snapshot from the Sensors tab to see it here." : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "在传感器页保存快照后会显示在这里。" } } } },
-    "Saved At" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存时间" } } } },
-    "Sensors" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "传感器" } } } },
-    "Serious" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "较严重" } } } },
-    "Settings" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置" } } } },
-    "Settings Error" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置错误" } } } },
-    "Share JSON" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "分享 JSON" } } } },
-    "Simulator results do not prove real device sensor availability or accuracy." : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "模拟器结果不能证明真实设备的传感器能力或准确性。" } } } },
-    "Snapshot Count" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "快照数量" } } } },
-    "Snapshot Detail" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "快照详情" } } } },
-    "Snapshot Error" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "快照错误" } } } },
-    "Snapshot Saved" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "快照已保存" } } } },
-    "Speed" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "速度" } } } },
-    "Stationary" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "静止" } } } },
-    "Steps" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "步数" } } } },
-    "Supported" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "支持" } } } },
-    "The current sensor state was saved locally." : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "当前传感器状态已保存在本机。" } } } },
-    "The snapshot was saved, but old snapshot cleanup failed." : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "快照已保存，但旧快照清理失败。" } } } },
-    "Thermal State" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "热状态" } } } },
-    "This removes all local snapshots from this device." : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "这会从本设备删除全部本地快照。" } } } },
-    "This removes the selected local snapshot." : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "这会删除选中的本地快照。" } } } },
-    "Unavailable" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "不可用" } } } },
-    "Unknown" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "未知" } } } },
-    "Unplugged" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "未充电" } } } },
-    "Use a real iPhone for actual sensor capability and accuracy checks." : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "请使用真机判断实际传感器能力和精度。" } } } },
-    "User Acceleration X" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "用户加速度 X" } } } },
-    "User Acceleration Y" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "用户加速度 Y" } } } },
-    "User Acceleration Z" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "用户加速度 Z" } } } },
-    "Version" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "版本" } } } },
-    "Waiting Data" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "等待数据" } } } },
-    "Walking" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "走路" } } } },
-    "Yaw" : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "Yaw" } } } },
-    "iOS does not expose every Motion & Fitness permission state with the same precision as Location." : { "localizations" : { "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "iOS 对运动与健身权限状态的暴露不像位置权限一样精确。" } } } }
+    "%lld" : {
+
+    },
+    "Accelerometer" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加速度计"
+          }
+        }
+      }
+    },
+    "Activity" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "活动识别"
+          }
+        }
+      }
+    },
+    "Activity Recognition" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "活动识别"
+          }
+        }
+      }
+    },
+    "Activity Type" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "活动类型"
+          }
+        }
+      }
+    },
+    "Altitude" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "海拔"
+          }
+        }
+      }
+    },
+    "App Information" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 信息"
+          }
+        }
+      }
+    },
+    "Appearance" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "外观"
+          }
+        }
+      }
+    },
+    "App Name" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 名称"
+          }
+        }
+      }
+    },
+    "Authorized When In Use" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用 App 时允许"
+          }
+        }
+      }
+    },
+    "Automotive" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "车载"
+          }
+        }
+      }
+    },
+    "Available" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可用"
+          }
+        }
+      }
+    },
+    "Barometer" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "气压"
+          }
+        }
+      }
+    },
+    "Barometer / Altimeter" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "气压计 / 高度计"
+          }
+        }
+      }
+    },
+    "Battery Level" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "电量"
+          }
+        }
+      }
+    },
+    "Battery State" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "充电状态"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
+        }
+      }
+    },
+    "Charging" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在充电"
+          }
+        }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清空"
+          }
+        }
+      }
+    },
+    "Clear All Snapshots?" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清空全部快照？"
+          }
+        }
+      }
+    },
+    "Clear History" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清空历史"
+          }
+        }
+      }
+    },
+    "Confidence" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "置信度"
+          }
+        }
+      }
+    },
+    "Course" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "航向"
+          }
+        }
+      }
+    },
+    "Critical" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "严重"
+          }
+        }
+      }
+    },
+    "Cycling" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "骑行"
+          }
+        }
+      }
+    },
+    "Current System Appearance" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当前系统外观"
+          }
+        }
+      }
+    },
+    "Dark" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "深色"
+          }
+        }
+      }
+    },
+    "Data Management" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数据管理"
+          }
+        }
+      }
+    },
+    "Data Policy" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数据策略"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除"
+          }
+        }
+      }
+    },
+    "Delete Snapshot" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除快照"
+          }
+        }
+      }
+    },
+    "Delete Snapshot?" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "删除快照？"
+          }
+        }
+      }
+    },
+    "Denied" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已拒绝"
+          }
+        }
+      }
+    },
+    "Denied or Restricted" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已拒绝或受限"
+          }
+        }
+      }
+    },
+    "Device" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设备状态"
+          }
+        }
+      }
+    },
+    "Device Capabilities" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设备能力"
+          }
+        }
+      }
+    },
+    "Device Motion" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设备运动"
+          }
+        }
+      }
+    },
+    "Distance" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "距离"
+          }
+        }
+      }
+    },
+    "Error" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "错误"
+          }
+        }
+      }
+    },
+    "Fair" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一般"
+          }
+        }
+      }
+    },
+    "Floors Ascended" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上楼层数"
+          }
+        }
+      }
+    },
+    "Floors Descended" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下楼层数"
+          }
+        }
+      }
+    },
+    "Follow System" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "跟随系统"
+          }
+        }
+      }
+    },
+    "Full" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已充满"
+          }
+        }
+      }
+    },
+    "Gravity X" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重力加速度 X"
+          }
+        }
+      }
+    },
+    "Gravity Y" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重力加速度 Y"
+          }
+        }
+      }
+    },
+    "Gravity Z" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重力加速度 Z"
+          }
+        }
+      }
+    },
+    "Gyroscope" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "陀螺仪"
+          }
+        }
+      }
+    },
+    "High" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高"
+          }
+        }
+      }
+    },
+    "History" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "历史"
+          }
+        }
+      }
+    },
+    "History Error" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "历史错误"
+          }
+        }
+      }
+    },
+    "Horizontal Accuracy" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "水平精度"
+          }
+        }
+      }
+    },
+    "Identifier" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "标识符"
+          }
+        }
+      }
+    },
+    "iOS does not expose every Motion & Fitness permission state with the same precision as Location." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOS 对运动与健身权限状态的暴露不像位置权限一样精确。"
+          }
+        }
+      }
+    },
+    "Latitude" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "纬度"
+          }
+        }
+      }
+    },
+    "Live Status" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "实时状态"
+          }
+        }
+      }
+    },
+    "Light" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "浅色"
+          }
+        }
+      }
+    },
+    "Local device only. No upload, no server, no third-party SDK." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仅保存在本机。不上传，不使用服务器，不接第三方 SDK。"
+          }
+        }
+      }
+    },
+    "Location" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置"
+          }
+        }
+      }
+    },
+    "Location Ready" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置已就绪"
+          }
+        }
+      }
+    },
+    "Longitude" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "经度"
+          }
+        }
+      }
+    },
+    "Low" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "低"
+          }
+        }
+      }
+    },
+    "Low Power Mode" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "低电量模式"
+          }
+        }
+      }
+    },
+    "Medium" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中"
+          }
+        }
+      }
+    },
+    "Mode" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模式"
+          }
+        }
+      }
+    },
+    "Motion" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运动"
+          }
+        }
+      }
+    },
+    "Motion & Fitness" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运动与健身"
+          }
+        }
+      }
+    },
+    "Motion Ready" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运动已就绪"
+          }
+        }
+      }
+    },
+    "No Snapshots" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暂无快照"
+          }
+        }
+      }
+    },
+    "Nominal" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正常"
+          }
+        }
+      }
+    },
+    "Not Determined" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚未决定"
+          }
+        }
+      }
+    },
+    "Off" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "好"
+          }
+        }
+      }
+    },
+    "On" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开启"
+          }
+        }
+      }
+    },
+    "Open App Settings" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开 App 设置"
+          }
+        }
+      }
+    },
+    "Open Settings" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开设置"
+          }
+        }
+      }
+    },
+    "Pedometer" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "计步"
+          }
+        }
+      }
+    },
+    "Permission Limited" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "权限受限"
+          }
+        }
+      }
+    },
+    "Permissions" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "权限"
+          }
+        }
+      }
+    },
+    "Permissions are requested only when you tap a permission action or start reading the related sensor." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只有点击权限操作或开始读取相关传感器时才会请求权限。"
+          }
+        }
+      }
+    },
+    "Pitch" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pitch"
+          }
+        }
+      }
+    },
+    "Pressure" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "气压"
+          }
+        }
+      }
+    },
+    "Relative Altitude" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相对高度"
+          }
+        }
+      }
+    },
+    "Request Location" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请求位置"
+          }
+        }
+      }
+    },
+    "Request Motion" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请求运动权限"
+          }
+        }
+      }
+    },
+    "Restricted" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "受限"
+          }
+        }
+      }
+    },
+    "Roll" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roll"
+          }
+        }
+      }
+    },
+    "Rotation Rate X" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋转率 X"
+          }
+        }
+      }
+    },
+    "Rotation Rate Y" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋转率 Y"
+          }
+        }
+      }
+    },
+    "Rotation Rate Z" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋转率 Z"
+          }
+        }
+      }
+    },
+    "Running" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "跑步"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存"
+          }
+        }
+      }
+    },
+    "Save a snapshot from the Sensors tab to see it here." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在传感器页保存快照后会显示在这里。"
+          }
+        }
+      }
+    },
+    "Save Failed" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存失败"
+          }
+        }
+      }
+    },
+    "Saved At" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存时间"
+          }
+        }
+      }
+    },
+    "SensorLog" : {
+
+    },
+    "Sensors" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "传感器"
+          }
+        }
+      }
+    },
+    "Serious" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "较严重"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置"
+          }
+        }
+      }
+    },
+    "Settings Error" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置错误"
+          }
+        }
+      }
+    },
+    "Share JSON" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分享 JSON"
+          }
+        }
+      }
+    },
+    "Simulator results do not prove real device sensor availability or accuracy." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模拟器结果不能证明真实设备的传感器能力或准确性。"
+          }
+        }
+      }
+    },
+    "Snapshot" : {
+
+    },
+    "Snapshot Count" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快照数量"
+          }
+        }
+      }
+    },
+    "Snapshot Detail" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快照详情"
+          }
+        }
+      }
+    },
+    "Snapshot Error" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快照错误"
+          }
+        }
+      }
+    },
+    "Snapshot Saved" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快照已保存"
+          }
+        }
+      }
+    },
+    "Speed" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "速度"
+          }
+        }
+      }
+    },
+    "Stationary" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "静止"
+          }
+        }
+      }
+    },
+    "Steps" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "步数"
+          }
+        }
+      }
+    },
+    "Supported" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "支持"
+          }
+        }
+      }
+    },
+    "The current sensor state was saved locally." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当前传感器状态已保存在本机。"
+          }
+        }
+      }
+    },
+    "The snapshot was saved, but old snapshot cleanup failed." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快照已保存，但旧快照清理失败。"
+          }
+        }
+      }
+    },
+    "Thermal State" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "热状态"
+          }
+        }
+      }
+    },
+    "This removes all local snapshots from this device." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这会从本设备删除全部本地快照。"
+          }
+        }
+      }
+    },
+    "This removes the selected local snapshot." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "这会删除选中的本地快照。"
+          }
+        }
+      }
+    },
+    "Unavailable" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不可用"
+          }
+        }
+      }
+    },
+    "Unknown" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未知"
+          }
+        }
+      }
+    },
+    "Unplugged" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未充电"
+          }
+        }
+      }
+    },
+    "Use a real iPhone for actual sensor capability and accuracy checks." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请使用真机判断实际传感器能力和精度。"
+          }
+        }
+      }
+    },
+    "User Acceleration X" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用户加速度 X"
+          }
+        }
+      }
+    },
+    "User Acceleration Y" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用户加速度 Y"
+          }
+        }
+      }
+    },
+    "User Acceleration Z" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用户加速度 Z"
+          }
+        }
+      }
+    },
+    "Version" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本"
+          }
+        }
+      }
+    },
+    "Waiting Data" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "等待数据"
+          }
+        }
+      }
+    },
+    "Walking" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "走路"
+          }
+        }
+      }
+    },
+    "Yaw" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yaw"
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }
