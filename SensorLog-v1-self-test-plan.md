@@ -246,61 +246,226 @@
 
 ### V2 Offline Sensor Quality Plan
 
-V2 目标：在不主动联网、不上传数据的前提下，把 App 从“传感器接口展示”升级为“离线传感器质量分析工具”。App 仍不加入服务器、第三方 SDK、API Key 或远程配置；定位可使用 iOS 系统定位服务在有网络时自动获得的系统辅助结果，但 App 本身不发网络请求。
+V2 第一轮只做 P0 闭环：在不主动联网、不上传数据的前提下，把 App 从“传感器接口展示”升级为“离线传感器质量分析工具”。App 仍不加入服务器、第三方 SDK、API Key 或远程配置；定位可使用 iOS 系统定位服务在有网络时自动获得的系统辅助结果，但 App 本身不发网络请求。
 
-#### P0
+#### Implementation Status
 
-- 传感器可信度评分：
-  - 为 Location、Motion、Barometer、Pedometer、Activity 增加 High / Medium / Low 质量状态。
-  - Location 质量依据：水平精度、垂直精度、定位更新时间、速度有效性、航向有效性。
-  - Motion 质量依据：采样稳定性、加速度噪声、陀螺仪噪声。
-  - Barometer 质量依据：气压波动、相对高度漂移、设备支持状态。
-- 静止检测：
-  - 使用用户加速度模长、陀螺仪旋转率、短时间窗口方差判断设备是否静止。
-  - 静止时解释小幅加速度变化为传感器噪声，不误判为真实运动。
-- 原始值 / 平滑值切换：
-  - 提供 Raw / Smoothed 显示模式。
-  - 平滑算法优先使用指数移动平均或滑动平均。
-  - 对低于阈值的微小加速度和角速度提供显示层归零。
-- 定位质量面板：
-  - 显示水平精度、垂直精度、定位更新时间、速度有效性、航向有效性。
-  - 低质量定位时显示原因，例如精度差、数据过旧、速度低可信。
-- 速度可信度判断：
-  - 速度继续来自 `CLLocation.speed`，不自行伪造速度。
-  - 当设备静止且定位漂移导致速度跳动时，标记为低可信或显示静止。
+- V2 P0 代码已完成：质量分析、滚动窗口、静止检测、Raw / Smoothed、质量 UI、可选快照字段、JSON v2 和中英文文案。
+- 已新增 `SensorLogTests`，iPhone 17 模拟器构建及 14 项测试通过；Raw / Smoothed 持久化、新快照流程和旧快照读取已验证。
+- 待真机验证：权限允许/拒绝、静置 10 秒、轻微移动、步行，以及阈值调优。
 
-#### P1
+#### V2 P0 Success Criteria
 
-- 姿态角中文化：
-  - Roll：横滚角 (Roll)
-  - Pitch：俯仰角 (Pitch)
-  - Yaw：偏航角 (Yaw)
-  - 支持 radians / degrees 单位切换。
-- 采样稳定性统计：
-  - 显示最近窗口内的实际采样频率、最小值、最大值、平均值、标准差。
-  - 先覆盖 Motion 和 Barometer。
-- 离线定位说明：
-  - 说明 App 不主动联网。
-  - 说明无网络时定位主要依赖 GPS/GNSS 和本机传感器，有网络时 iOS 系统定位服务可能使用 Wi-Fi / 蜂窝辅助。
-- 异常标注：
-  - 静止状态下速度不为 0：疑似定位漂移。
-  - 水平精度或垂直精度过差：位置低可信。
-  - 气压或相对高度突变：可能是环境变化或传感器波动。
+- Sensors 页能直接看出每组读数的质量状态：High / Medium / Low。
+- 静止放置设备时，Motion 能稳定识别为静止，并把小幅加速度和角速度变化解释为噪声。
+- Location 能显示定位质量原因，包括精度差、数据过旧、速度低可信、航向低可信。
+- Raw / Smoothed 切换只影响显示，不伪造原始传感器数据。
+- 保存快照后，详情页和 JSON v2 能复盘当时的质量状态、低可信原因、平滑模式和窗口统计。
+- 旧历史快照仍能打开、删除和分享；缺失 v2 字段时显示为暂无质量分析。
 
-#### P2
+#### Scope For First V2 Build
 
-- App 打开期间的短窗口时间线：
-  - 最近 30-60 秒加速度、陀螺仪、气压、相对高度、速度曲线。
-- 离线移动状态融合：
-  - 融合 Core Location speed、pedometer、activity recognition、acceleration variance、gyro variance。
-  - 输出静止、手持移动、步行、跑步、车载、疑似定位漂移。
-- 气压高度校准：
-  - 支持用户手动输入当前海拔作为基准。
-  - 后续显示相对高度变化和估算海拔。
-- Snapshot JSON v2：
-  - 增加 quality score、confidence、smoothing mode、sample window statistics、warnings。
-- 本机诊断报告：
-  - 汇总设备传感器支持、权限状态、当前读数可信度和低可信原因。
+- In scope:
+  - Quality score for Location, Motion, Barometer, Pedometer, Activity.
+  - Motion stationary detection.
+  - Raw / Smoothed display mode.
+  - Location quality panel.
+  - Speed credibility judgment using `CLLocation.speed`.
+  - Snapshot storage and JSON export for v2 quality analysis.
+  - Localized production UI copy in `Localizable.xcstrings`.
+- Out of scope for first build:
+  - Charts and 30-60 second timelines.
+  - Full offline movement fusion labels such as handheld moving, walking, running, vehicle.
+  - Manual altitude calibration.
+  - Diagnostic report screen.
+  - Map, track display, CSV export, continuous recording, background recording.
+  - HealthKit, Apple Watch, Shortcuts, HTTP/MQTT/WebSocket output.
+
+#### Data Model Plan
+
+- Add a small analysis layer separate from SwiftUI views:
+  - `QualityLevel`: `high`, `medium`, `low`.
+  - `SmoothingMode`: `raw`, `smoothed`.
+  - `QualityWarning`: stable raw identifiers for low-quality reasons.
+  - `QualityAssessment`: quality level, optional numeric confidence, warnings.
+  - `SampleWindowStatistics`: sample count, actual sample rate, min, max, mean, standard deviation where applicable.
+- Extend `LiveSensorState` with:
+  - Per-group quality assessments for Location, Motion, Barometer, Pedometer, Activity.
+  - Motion stationary state.
+  - Current smoothing mode.
+  - Motion and Barometer window statistics.
+- Extend `SensorSnapshot` with optional v2 fields:
+  - Quality level and warnings for Location, Motion, Barometer, Pedometer, Activity.
+  - Stationary state.
+  - Smoothing mode used when the snapshot was saved.
+  - Sample window statistics for Motion and Barometer.
+- Keep new snapshot fields optional so SwiftData can load older records.
+
+#### Quality Rules And Defaults
+
+- Centralize all thresholds in one configuration type so real-device tuning only changes one place.
+- Location:
+  - High: location age <= 5s, horizontal accuracy <= 25m, vertical accuracy absent or <= 30m.
+  - Medium: location age <= 15s, horizontal accuracy <= 100m, vertical accuracy absent or <= 150m.
+  - Low: anything worse, missing required data, denied permission, unavailable sensor, or error.
+  - Warnings: poor horizontal accuracy, poor vertical accuracy, stale location, invalid speed, invalid course, low speed credibility.
+- Motion:
+  - Use a rolling 3s window of device motion samples.
+  - High: actual sample rate between 40Hz and 60Hz and stable recent samples.
+  - Medium: actual sample rate between 20Hz and 80Hz with usable samples.
+  - Low: missing samples, unavailable motion, permission/error state, or unstable sample timing.
+  - Stationary default: user acceleration magnitude mean <= 0.03g, acceleration standard deviation <= 0.015g, gyro magnitude mean <= 0.05rad/s, gyro standard deviation <= 0.03rad/s.
+  - Warnings: unstable sample rate, high acceleration noise, high gyro noise, unavailable motion data.
+- Barometer:
+  - Use a rolling 10s window of pressure and relative altitude samples.
+  - High: pressure range <= 1.0hPa and relative altitude range <= 1.5m.
+  - Medium: pressure range <= 3.0hPa and relative altitude range <= 5.0m.
+  - Low: unavailable sensor, missing samples, larger drift, or error.
+  - Warnings: pressure fluctuation, altitude drift, unavailable barometer.
+- Pedometer:
+  - High: supported, authorized, and current-day step data available.
+  - Medium: supported and authorized but optional fields such as distance or floors are missing.
+  - Low: unsupported, denied, restricted, waiting too long, or error.
+- Activity:
+  - Map Core Motion confidence directly: high -> High, medium -> Medium, low/unknown -> Low.
+
+#### Raw / Smoothed Display Plan
+
+- Default mode is Raw.
+- Store display mode with app storage so the user selection persists across launches.
+- Smoothed mode uses exponential moving average with default `alpha = 0.25`.
+- Smoothing is for display and quality explanation only; do not rewrite raw Core Motion values.
+- Display-layer zeroing:
+  - Acceleration absolute value < 0.005g displays as 0.
+  - Rotation rate absolute value < 0.01rad/s displays as 0.
+- Snapshot saves raw readings plus the selected smoothing mode and quality assessment.
+
+#### UI Plan
+
+- Sensors tab:
+  - Add a Raw / Smoothed segmented control near Live Status.
+  - Add a compact Quality row at the top of Location, Motion, Barometer, Pedometer, and Activity.
+  - Show warnings as concise production-facing rows, not debug text.
+- Location section:
+  - Add vertical accuracy, last updated age, speed credibility, and course credibility.
+  - Keep speed value from `CLLocation.speed`; never calculate or fabricate speed.
+  - When stationary detection conflicts with a non-zero speed, mark speed as low credibility or likely drift.
+- Motion section:
+  - Add stationary status.
+  - Add short window summary: sample count, sample rate, acceleration noise, gyro noise.
+- Barometer section:
+  - Add pressure and relative altitude stability summary.
+- History detail:
+  - Show saved quality level and warnings for each group.
+  - Show smoothing mode saved with the snapshot.
+- Settings:
+  - Do not add threshold tuning in v2 P0.
+  - Keep data policy copy aligned with local-only behavior.
+
+#### JSON Export v2 Plan
+
+- Change export `schemaVersion` from `1` to `2`.
+- Add top-level or grouped quality fields without removing existing reading fields.
+- Required v2 export content:
+  - `quality`: per sensor group level and warnings.
+  - `confidence`: numeric or categorical confidence where available.
+  - `smoothingMode`: `raw` or `smoothed`.
+  - `sampleWindowStatistics`: Motion and Barometer summaries.
+  - `warnings`: stable warning identifiers and localized display text can remain UI-only.
+- Existing single-snapshot share flow remains unchanged.
+
+#### Implementation Order
+
+1. Add analysis models and threshold configuration.
+2. Add rolling sample windows inside the sensor manager.
+3. Compute quality assessments and stationary state from live readings.
+4. Add Raw / Smoothed display state and formatting support.
+5. Update Sensors UI with quality rows and concise warning display.
+6. Extend snapshot storage and detail display with optional v2 analysis fields.
+7. Update JSON export to schema version 2.
+8. Localize all new user-facing strings.
+9. Run build and verification checklist.
+
+#### Verification Checklist
+
+- Build:
+  - `xcodebuild -project SensorLog.xcodeproj -scheme SensorLog -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 17' build`
+- Tests:
+  - `xcodebuild -project SensorLog.xcodeproj -scheme SensorLog -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 17' test`
+- Static checks:
+  - `git diff --check`
+  - `rg -n "Simulator|simulator|模拟器|Self-Test|self-test|自测" SensorLog`
+- Manual verification:
+  - First launch before permissions.
+  - Location allowed.
+  - Location denied or restricted.
+  - Motion allowed.
+  - Motion denied or restricted.
+  - Device placed still for at least 10 seconds.
+  - Device hand-held and moved lightly.
+  - Walking with pedometer and activity readings available.
+  - Raw / Smoothed mode switch.
+  - Save snapshot, open detail, share JSON.
+  - Open old snapshots created before v2.
+
+#### Deferred V2+ Items
+
+- P1:
+  - Roll: 横滚角 (Roll), Pitch: 俯仰角 (Pitch), Yaw: 偏航角 (Yaw).
+  - Radians / degrees unit switch.
+  - Expanded sample statistics display for Motion and Barometer.
+  - Offline positioning explanation in Settings.
+  - More anomaly labels for location drift and barometer jumps.
+- P2:
+  - Additional comparison tools for saved snapshots and future recording sessions.
+  - Offline movement-state fusion across Core Location, pedometer, activity recognition, acceleration variance, and gyro variance.
+  - Manual barometric altitude calibration.
+  - Local diagnostic report.
+
+### V2.1 Readable Visual UI Plan
+
+V2.1 只做基于现有数据的图形化表达：使用 Apple 原生 SwiftUI 和 `Charts`，把当前 Sensors 页从“长列表读数”升级为“可读卡片 + 小趋势图 + 质量结论”。不新增服务器、第三方 SDK、地图、记录会话、CSV 导出、后台记录或 HealthKit。
+
+#### Product Direction
+
+- 默认面向普通用户展示处理后的可读数据，不要求用户理解噪声指标。
+- `Acceleration Noise` 和 `Gyroscope Noise` 继续作为内部质量判断依据，不作为普通用户主界面选项。
+- 用户界面使用 `Stable`、`Needs Attention`、`High`、`Medium`、`Low` 等结论表达稳定性和可信度。
+- 保留 Raw / Smoothed；V2.1 可新增默认 `Readable` 展示方向，实际实现应保持快照保存 raw readings 的原则不变。
+
+#### Screen Plan
+
+- Sensors overview:
+  - Motion: quality, Stationary/Moving, processed acceleration value, sample rate, 30-60s mini trend.
+  - Location: latitude, longitude, horizontal/vertical accuracy, last updated age, speed/course credibility, accuracy trend.
+  - Barometer: pressure, relative altitude, pressure range, altitude range, pressure trend.
+  - Pedometer: steps, distance, floors ascended/descended.
+  - Activity: activity type and confidence.
+  - Device: battery level, battery state, low power mode, thermal state.
+- Motion detail:
+  - Main chart: processed acceleration magnitude over the last 60 seconds.
+  - Header: quality, motion state, sampling stability, sample count, sample rate.
+  - User acceleration, gravity, rotation rate, roll, pitch, and yaw stay in grouped detail rows instead of filling the overview.
+- Environment detail:
+  - Combine Location and Barometer because both explain environment and signal credibility.
+  - Do not add map or track display in V2.1.
+  - Pedometer, Activity, and Device can appear as compact supporting status cards.
+
+#### Visual And Technical Guidance
+
+- Follow Apple platform style: system typography, SF Symbols, grouped backgrounds, 8px-or-less card radius, dynamic type, light/dark mode, and accessible contrast.
+- Use `import Charts` with `Chart`, `LineMark`, optional `RuleMark`, `chartXAxis`, `chartYAxis`, and iOS 17 chart selection or `chartOverlay` where useful.
+- Each small chart should answer one question: whether the recent value is stable, drifting, or needs attention.
+- Use existing rolling windows and displayed values first; do not introduce persistent time-series storage in V2.1.
+- Put all new production UI strings in `Localizable.xcstrings`.
+
+#### V2.1 Acceptance Checks
+
+- Sensors overview no longer emphasizes noise rows for ordinary users.
+- Raw / Smoothed still works, and any Readable display does not overwrite raw saved data.
+- Motion, Location, and Barometer charts match their visible quality conclusions.
+- The UI remains readable with Chinese and English localization, dynamic type, and light/dark mode.
+- Run `git diff --check` and `rg -n "Simulator|simulator|模拟器|Self-Test|self-test|自测" SensorLog` after documentation or code changes.
 
 ### Longer-Term Ideas
 

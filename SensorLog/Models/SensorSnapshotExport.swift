@@ -13,16 +13,53 @@ extension SensorSnapshot {
 }
 
 private struct SnapshotExportPayload: Codable {
-    var schemaVersion = 1
+    var schemaVersion = 2
     var app = "SensorLog"
     var createdAt: Date
     var device: SnapshotDeviceMetadata
     var readings: SnapshotReadings
+    var quality: SnapshotQuality?
+    var smoothingMode: SmoothingMode?
+    var motionStationary: Bool?
+    var sampleWindowStatistics: SnapshotSampleWindowStatistics?
+    var warnings: [String]?
 
     init(snapshot: SensorSnapshot) {
         createdAt = snapshot.createdAt
         device = SnapshotDeviceMetadata.current
         readings = SnapshotReadings(snapshot: snapshot)
+        quality = snapshot.hasQualityAnalysis ? SnapshotQuality(snapshot: snapshot) : nil
+        smoothingMode = snapshot.savedSmoothingMode
+        motionStationary = snapshot.isMotionStationary
+        sampleWindowStatistics = SnapshotSampleWindowStatistics(snapshot: snapshot)
+        warnings = snapshot.hasQualityAnalysis ? snapshot.savedWarningIdentifiers : nil
+    }
+}
+
+private struct SnapshotQuality: Codable {
+    var location: QualityAssessment?
+    var motion: QualityAssessment?
+    var barometer: QualityAssessment?
+    var pedometer: QualityAssessment?
+    var activity: QualityAssessment?
+
+    init(snapshot: SensorSnapshot) {
+        location = snapshot.savedLocationQuality
+        motion = snapshot.savedMotionQuality
+        barometer = snapshot.savedBarometerQuality
+        pedometer = snapshot.savedPedometerQuality
+        activity = snapshot.savedActivityQuality
+    }
+}
+
+private struct SnapshotSampleWindowStatistics: Codable {
+    var motion: MotionWindowStatistics?
+    var barometer: BarometerWindowStatistics?
+
+    init?(snapshot: SensorSnapshot) {
+        motion = snapshot.savedMotionWindowStatistics
+        barometer = snapshot.savedBarometerWindowStatistics
+        guard motion != nil || barometer != nil else { return nil }
     }
 }
 
@@ -63,17 +100,25 @@ private struct SnapshotLocationReading: Codable {
     var latitude: Double?
     var longitude: Double?
     var horizontalAccuracy: Double?
+    var verticalAccuracy: Double?
     var speed: Double?
+    var speedAccuracy: Double?
     var altitude: Double?
     var course: Double?
+    var courseAccuracy: Double?
+    var lastUpdatedAt: Date?
 
     init(snapshot: SensorSnapshot) {
         latitude = snapshot.latitude
         longitude = snapshot.longitude
         horizontalAccuracy = snapshot.horizontalAccuracy
+        verticalAccuracy = snapshot.verticalAccuracy
         speed = snapshot.speed
+        speedAccuracy = snapshot.speedAccuracy
         altitude = snapshot.altitude
         course = snapshot.course
+        courseAccuracy = snapshot.courseAccuracy
+        lastUpdatedAt = snapshot.lastUpdatedAt
     }
 }
 

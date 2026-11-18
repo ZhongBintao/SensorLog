@@ -1,8 +1,43 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%lld" : {
 
+    },
+    "Acceleration changes are noisy." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加速度变化噪声较大。"
+          }
+        }
+      }
+    },
+    "Acceleration Magnitude" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加速度幅值"
+          }
+        }
+      }
+    },
+    "Acceleration Noise" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "加速度噪声"
+          }
+        }
+      }
     },
     "Accelerometer" : {
       "extractionState" : "stale",
@@ -21,6 +56,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "活动识别"
+          }
+        }
+      }
+    },
+    "Activity confidence is low." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "活动识别可信度较低。"
+          }
+        }
+      }
+    },
+    "Activity data is unavailable." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "活动识别数据不可用。"
           }
         }
       }
@@ -58,6 +115,17 @@
         }
       }
     },
+    "Altitude Range" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相对高度范围"
+          }
+        }
+      }
+    },
     "App Information" : {
       "localizations" : {
         "zh-Hans" : {
@@ -85,6 +153,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "外观"
+          }
+        }
+      }
+    },
+    "Attitude" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设备姿态"
           }
         }
       }
@@ -139,6 +218,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "气压计 / 高度计"
+          }
+        }
+      }
+    },
+    "Barometer data is unavailable." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "气压计数据不可用。"
           }
         }
       }
@@ -216,6 +306,27 @@
         }
       }
     },
+    "Collecting more samples." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在收集更多样本。"
+          }
+        }
+      }
+    },
+    "Collecting Trend" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在收集趋势数据"
+          }
+        }
+      }
+    },
     "Confidence" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -234,6 +345,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "航向"
+          }
+        }
+      }
+    },
+    "Course Credibility" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "航向可信度"
+          }
+        }
+      }
+    },
+    "Course is not currently reliable." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当前航向可信度较低。"
           }
         }
       }
@@ -398,6 +531,26 @@
         }
       }
     },
+    "Dismiss" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭"
+          }
+        }
+      }
+    },
+    "Display Values" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示数值"
+          }
+        }
+      }
+    },
     "Distance" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -440,6 +593,26 @@
         }
       }
     },
+    "Environment" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "环境"
+          }
+        }
+      }
+    },
+    "Environment Detail" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "环境详情"
+          }
+        }
+      }
+    },
     "Error" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -458,6 +631,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "一般"
+          }
+        }
+      }
+    },
+    "Falling" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下降"
           }
         }
       }
@@ -506,6 +690,17 @@
         }
       }
     },
+    "Gravity" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重力加速度"
+          }
+        }
+      }
+    },
     "Gravity X" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -550,6 +745,17 @@
         }
       }
     },
+    "Gyroscope Noise" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "陀螺仪噪声"
+          }
+        }
+      }
+    },
     "High" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -582,12 +788,22 @@
       }
     },
     "Horizontal Accuracy" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "水平精度"
+          }
+        }
+      }
+    },
+    "Horizontal accuracy is limited." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "水平精度较低。"
           }
         }
       }
@@ -609,6 +825,27 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "语言"
+          }
+        }
+      }
+    },
+    "Last Updated Age" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "距上次更新"
+          }
+        }
+      }
+    },
+    "Latest" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最新值"
           }
         }
       }
@@ -636,6 +873,7 @@
       }
     },
     "Live Status" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -651,6 +889,27 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "位置"
+          }
+        }
+      }
+    },
+    "Location Accuracy Trend" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "定位精度趋势"
+          }
+        }
+      }
+    },
+    "Location data is out of date." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "定位数据已过期。"
           }
         }
       }
@@ -751,12 +1010,86 @@
         }
       }
     },
+    "Motion data is unavailable." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运动数据不可用。"
+          }
+        }
+      }
+    },
+    "Motion Detail" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运动详情"
+          }
+        }
+      }
+    },
     "Motion Enabled" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "运动已启用"
+          }
+        }
+      }
+    },
+    "Motion sample timing is unstable." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运动采样时序不稳定。"
+          }
+        }
+      }
+    },
+    "Motion State" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运动状态"
+          }
+        }
+      }
+    },
+    "Moving" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移动中"
+          }
+        }
+      }
+    },
+    "Needs Attention" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "需要关注"
+          }
+        }
+      }
+    },
+    "No Quality Analysis" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "暂无质量分析"
           }
         }
       }
@@ -866,6 +1199,28 @@
         }
       }
     },
+    "Pedometer data is unavailable." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "计步数据不可用。"
+          }
+        }
+      }
+    },
+    "Permission is limited." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "权限受限。"
+          }
+        }
+      }
+    },
     "Permission Limited" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -910,12 +1265,84 @@
       }
     },
     "Pressure" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "气压"
+          }
+        }
+      }
+    },
+    "Pressure is fluctuating." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "气压波动较大。"
+          }
+        }
+      }
+    },
+    "Pressure Range" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "气压范围"
+          }
+        }
+      }
+    },
+    "Pressure Trend" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "气压趋势"
+          }
+        }
+      }
+    },
+    "Quality" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "质量"
+          }
+        }
+      }
+    },
+    "Quality Analysis" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "质量分析"
+          }
+        }
+      }
+    },
+    "Raw" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "原始值"
+          }
+        }
+      }
+    },
+    "Recent 60 Seconds" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最近 60 秒"
           }
         }
       }
@@ -931,6 +1358,28 @@
         }
       }
     },
+    "Relative altitude is drifting." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相对高度存在漂移。"
+          }
+        }
+      }
+    },
+    "Required sensor data is missing." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "缺少必要的传感器数据。"
+          }
+        }
+      }
+    },
     "Restricted" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -942,6 +1391,17 @@
         }
       }
     },
+    "Rising" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上升"
+          }
+        }
+      }
+    },
     "Roll" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -949,6 +1409,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Roll"
+          }
+        }
+      }
+    },
+    "Rotation changes are noisy." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋转变化噪声较大。"
+          }
+        }
+      }
+    },
+    "Rotation Rate" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋转速率"
           }
         }
       }
@@ -993,6 +1475,37 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "跑步"
+          }
+        }
+      }
+    },
+    "Sample Count" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "样本数"
+          }
+        }
+      }
+    },
+    "Sample Rate" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "采样率"
+          }
+        }
+      }
+    },
+    "Sampling Stability" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "采样稳定性"
           }
         }
       }
@@ -1058,6 +1571,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "已保存，但旧快照清理失败。"
+          }
+        }
+      }
+    },
+    "Sensor Reading Error" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "传感器读取错误"
           }
         }
       }
@@ -1137,6 +1660,17 @@
         }
       }
     },
+    "Share Failed" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "分享失败"
+          }
+        }
+      }
+    },
     "Share JSON" : {
       "localizations" : {
         "zh-Hans" : {
@@ -1154,6 +1688,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "简体中文"
+          }
+        }
+      }
+    },
+    "Smoothed" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平滑值"
+          }
+        }
+      }
+    },
+    "Smoothed values affect display only. Snapshots keep raw readings." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平滑值仅影响显示，快照仍保存原始读数。"
+          }
+        }
+      }
+    },
+    "Smoothing Mode" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平滑模式"
           }
         }
       }
@@ -1189,6 +1755,7 @@
       }
     },
     "Snapshot Error" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -1209,6 +1776,17 @@
         }
       }
     },
+    "Some pedometer details are unavailable." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "部分计步详情不可用。"
+          }
+        }
+      }
+    },
     "Speed" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1216,6 +1794,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "速度"
+          }
+        }
+      }
+    },
+    "Speed Credibility" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "速度可信度"
+          }
+        }
+      }
+    },
+    "Speed is not currently reliable." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当前速度可信度较低。"
+          }
+        }
+      }
+    },
+    "Speed may reflect location drift." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "速度可能来自定位漂移。"
+          }
+        }
+      }
+    },
+    "Stable" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "稳定"
           }
         }
       }
@@ -1263,12 +1885,44 @@
         }
       }
     },
+    "Supporting Sensors" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "辅助传感器"
+          }
+        }
+      }
+    },
     "Tap Save Snapshot on the Sensors tab to see saved readings here." : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "在传感器页点保存快照后，已保存的读数会显示在这里。"
+          }
+        }
+      }
+    },
+    "The motion sample rate is outside the expected range." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运动采样率超出预期范围。"
+          }
+        }
+      }
+    },
+    "The sensor reading failed." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "传感器读取失败。"
           }
         }
       }
@@ -1304,6 +1958,27 @@
         }
       }
     },
+    "This sensor is unavailable." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "该传感器不可用。"
+          }
+        }
+      }
+    },
+    "Trend Range" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "趋势范围"
+          }
+        }
+      }
+    },
     "Unavailable" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1333,6 +2008,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未充电"
+          }
+        }
+      }
+    },
+    "User Acceleration" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "用户加速度"
           }
         }
       }
@@ -1381,6 +2067,28 @@
         }
       }
     },
+    "Vertical Accuracy" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "垂直精度"
+          }
+        }
+      }
+    },
+    "Vertical accuracy is limited." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "垂直精度较低。"
+          }
+        }
+      }
+    },
     "Waiting Data" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1388,6 +2096,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "等待数据"
+          }
+        }
+      }
+    },
+    "Waiting for sensor data." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在等待传感器数据。"
           }
         }
       }

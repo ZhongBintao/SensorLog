@@ -120,9 +120,13 @@ struct LocationReading: Codable, Equatable {
     var latitude: Double?
     var longitude: Double?
     var horizontalAccuracy: Double?
+    var verticalAccuracy: Double? = nil
     var speed: Double?
+    var speedAccuracy: Double? = nil
     var altitude: Double?
     var course: Double?
+    var courseAccuracy: Double? = nil
+    var lastUpdatedAt: Date? = nil
 }
 
 struct MotionReading: Codable, Equatable {
@@ -174,7 +178,9 @@ struct LiveSensorState: Codable, Equatable {
 
     var location: LocationReading?
     var motion: MotionReading?
+    var smoothedMotion: MotionReading?
     var barometer: BarometerReading?
+    var smoothedBarometer: BarometerReading?
     var pedometer: PedometerReading?
     var activity: ActivityReading?
     var device = DeviceReading(
@@ -183,6 +189,16 @@ struct LiveSensorState: Codable, Equatable {
         isLowPowerModeEnabled: false,
         thermalState: .unknown
     )
+
+    var locationQuality = QualityAssessment(level: .low, confidence: nil, warnings: [.waitingForData])
+    var motionQuality = QualityAssessment(level: .low, confidence: nil, warnings: [.waitingForData])
+    var barometerQuality = QualityAssessment(level: .low, confidence: nil, warnings: [.waitingForData])
+    var pedometerQuality = QualityAssessment(level: .low, confidence: nil, warnings: [.waitingForData])
+    var activityQuality = QualityAssessment(level: .low, confidence: nil, warnings: [.waitingForData])
+    var isMotionStationary: Bool?
+    var smoothingMode: SmoothingMode = .raw
+    var motionWindowStatistics: MotionWindowStatistics?
+    var barometerWindowStatistics: BarometerWindowStatistics?
 }
 
 struct SensorPermissionState: Codable, Equatable {
@@ -197,4 +213,107 @@ struct SensorAvailability: Codable, Equatable {
     var barometer = false
     var pedometer = false
     var activityRecognition = false
+}
+
+struct SensorTrendSample: Identifiable, Equatable, Sendable {
+    let id: UUID
+    var timestamp: Date
+    var rawValue: Double
+    var smoothedValue: Double?
+
+    init(
+        id: UUID = UUID(),
+        timestamp: Date,
+        rawValue: Double,
+        smoothedValue: Double?
+    ) {
+        self.id = id
+        self.timestamp = timestamp
+        self.rawValue = rawValue
+        self.smoothedValue = smoothedValue
+    }
+
+    func value(for mode: SmoothingMode) -> Double {
+        switch mode {
+        case .raw:
+            rawValue
+        case .smoothed:
+            smoothedValue ?? rawValue
+        }
+    }
+}
+
+struct SensorTrendState: Equatable, Sendable {
+    var motionAcceleration: [SensorTrendSample] = []
+    var locationAccuracy: [SensorTrendSample] = []
+    var barometerPressure: [SensorTrendSample] = []
+    var barometerAltitude: [SensorTrendSample] = []
+}
+
+enum SensorTrendBuffer {
+    static let defaultDuration: TimeInterval = 60
+    static let defaultMaximumCount = 600
+
+    static func appending(
+        _ sample: SensorTrendSample,
+        to samples: [SensorTrendSample],
+        duration: TimeInterval = defaultDuration,
+        maximumCount: Int = defaultMaximumCount
+    ) -> [SensorTrendSample] {
+        var updatedSamples = samples
+        if let lastTimestamp = updatedSamples.last?.timestamp,
+           sample.timestamp < lastTimestamp {
+            updatedSamples.removeAll(keepingCapacity: true)
+        } else if updatedSamples.last?.timestamp == sample.timestamp {
+            updatedSamples.removeLast()
+        }
+
+        updatedSamples.append(sample)
+        return trimming(
+            updatedSamples,
+            referenceDate: sample.timestamp,
+            duration: duration,
+            maximumCount: maximumCount
+        )
+    }
+
+    static func trimming(
+        _ samples: [SensorTrendSample],
+        referenceDate: Date,
+        duration: TimeInterval = defaultDuration,
+        maximumCount: Int = defaultMaximumCount
+    ) -> [SensorTrendSample] {
+        guard maximumCount > 0 else { return [] }
+        let cutoff = referenceDate.addingTimeInterval(-duration)
+        let recentSamples = samples.filter { $0.timestamp >= cutoff }
+        return Array(recentSamples.suffix(maximumCount))
+    }
+}
+
+extension MotionReading {
+    var userAccelerationMagnitude: Double? {
+        guard let userAccelerationX,
+              let userAccelerationY,
+              let userAccelerationZ else { return nil }
+        return hypot(hypot(userAccelerationX, userAccelerationY), userAccelerationZ)
+    }
+
+    func applyingDisplayDeadband(
+        configuration: SensorQualityConfiguration = .default
+    ) -> MotionReading {
+        MotionReading(
+            userAccelerationX: SensorQualityAnalyzer.displayValue(userAccelerationX, zeroThreshold: configuration.accelerationDisplayZeroThreshold),
+            userAccelerationY: SensorQualityAnalyzer.displayValue(userAccelerationY, zeroThreshold: configuration.accelerationDisplayZeroThreshold),
+            userAccelerationZ: SensorQualityAnalyzer.displayValue(userAccelerationZ, zeroThreshold: configuration.accelerationDisplayZeroThreshold),
+            gravityX: gravityX,
+            gravityY: gravityY,
+            gravityZ: gravityZ,
+            rotationRateX: SensorQualityAnalyzer.displayValue(rotationRateX, zeroThreshold: configuration.rotationRateDisplayZeroThreshold),
+            rotationRateY: SensorQualityAnalyzer.displayValue(rotationRateY, zeroThreshold: configuration.rotationRateDisplayZeroThreshold),
+            rotationRateZ: SensorQualityAnalyzer.displayValue(rotationRateZ, zeroThreshold: configuration.rotationRateDisplayZeroThreshold),
+            roll: roll,
+            pitch: pitch,
+            yaw: yaw
+        )
+    }
 }
